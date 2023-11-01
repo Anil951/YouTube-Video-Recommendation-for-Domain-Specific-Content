@@ -27,9 +27,9 @@ Welcome to the YouTube Video Recommendation System project! This comprehensive s
     - Convert text to lowercase.
     - Apply lemmatization, tokenization, and similarity checks.
     - Utilize NLP techniques to verify domain similarity:
-      • Verify title similarity using NLTK NLP and spaCy.
-      • Verify tag similarity using NLTK NLP and spaCy.
-      • Check if search texts of videos are similar.
+      - Verify title similarity using NLTK NLP and spaCy.
+      - Verify tag similarity using NLTK NLP and spaCy.
+      - Check if search texts of videos are similar.
 
 4. NLP Analysis on Comments of All Videos
    Conduct Natural Language Processing (NLP) analysis on video comments.
@@ -44,14 +44,14 @@ Welcome to the YouTube Video Recommendation System project! This comprehensive s
       Implement machine learning models to filter out spam comments.
     - Text Preprocessing:
       For each valid comment in the DataFrame, preprocess the text by:
-      • Converting text to lowercase.
-      • Handling HTML entities.
-      • Removing punctuation, numbers, and emojis.
-      • Dropping rows with missing or NaN values.
-      • Expanding contractions.
-      • Correcting spelling and grammar mistakes.
-      • Removing irrelevant text such as usernames and links.
-      • Handling slang words (scraped in the previous step).
+      - Converting text to lowercase.
+      - Handling HTML entities.
+      - Removing punctuation, numbers, and emojis.
+      - Dropping rows with missing or NaN values.
+      - Expanding contractions.
+      - Correcting spelling and grammar mistakes.
+      - Removing irrelevant text such as usernames and links.
+      - Handling slang words (scraped in the previous step).
     - Language Translation:
       Identify and translate non-English words in comments into English.
     - Sentiment Analysis:
