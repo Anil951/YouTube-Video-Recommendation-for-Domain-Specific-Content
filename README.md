@@ -81,8 +81,8 @@ Present the best video recommendations to first-time viewers within the specific
 4. Run the Application:
    `python main.py`
 
-> ## Contributing
-> We welcome contributions from the community to enhance the system's capabilities and accuracy. Feel free to submit pull requests and report issues on GitHub.
+## Contributing
+We welcome contributions from the community to enhance the system's capabilities and accuracy. Feel free to submit pull requests and report issues on GitHub.
 
 > [!NOTE]
 > The recommendations and insights provided in this project are based on Natural Language Processing (NLP) analysis and may not be infallible.
