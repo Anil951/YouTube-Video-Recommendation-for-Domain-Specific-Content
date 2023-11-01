@@ -75,14 +75,17 @@ Present the best video recommendations to first-time viewers within the specific
 
 1. Clone this repository to your local machine:
    `pip install -r requirements.txt`
-2. To run this project, you'll need to install the following Python libraries and dependencies:
+2. API Setup: Obtain API keys and credentials from the YouTube API. Insert your credentials in the project.
+3. To run this project, you'll need to install the following Python libraries and dependencies:
    `pip install -r requirements.txt`
-3. Run the Application:
+4. Run the Application:
    `python main.py`
 
-## Contributing
+> ## Contributing
+> We welcome contributions from the community to enhance the system's capabilities and accuracy. Feel free to submit pull requests and report issues on GitHub.
 
-We welcome contributions from the community to enhance the system's capabilities and accuracy. Feel free to submit pull requests and report issues on GitHub.
+> [!NOTE]
+> The recommendations and insights provided in this project are based on Natural Language Processing (NLP) analysis and may not be infallible.
 
 
 
