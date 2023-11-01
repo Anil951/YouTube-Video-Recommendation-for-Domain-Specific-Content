@@ -75,7 +75,8 @@ Present the best video recommendations to first-time viewers within the specific
 
 1. Clone this repository to your local machine:
    `pip install -r requirements.txt`
-2. API Setup: Obtain API keys and credentials from the `YouTube Data API` Insert your credentials in the project.
+2. API Setup:
+   Obtain API keys and credentials from the `YouTube Data API`. Insert your credentials in the project.
 3. To run this project, you'll need to install the following Python libraries and dependencies:
    `pip install -r requirements.txt`
 4. Run the Application:
