@@ -14,13 +14,13 @@ Welcome to the YouTube Video Recommendation System project! This comprehensive s
  
 ## Project outline/flow
 
-1. *Data Extraction using YouTube Data API*
+1. *Data Extraction using YouTube Data API :*
    Extract data from YouTube videos using the YouTube Data API, including video title, tags, comments, likes, dislikes, and comment count.
 
-2. *Collecting Search Texts*
+2. *Collecting Search Texts :*
    Gather the search texts or prompts used to find these videos on YouTube.
 
-3. *Domain Verification Using NLP*
+3. *Domain Verification Using NLP :*
    Check if all the videos are from the same domain.
    Perform domain verification processes:
     - Remove punctuation, duplicates, and stop words.
@@ -31,7 +31,7 @@ Welcome to the YouTube Video Recommendation System project! This comprehensive s
       - Verify tag similarity using NLTK NLP and spaCy.
       - Check if search texts of videos are similar.
 
-4. *NLP Analysis on Comments of All Videos*
+4. *NLP Analysis on Comments of All Videos :*
    Conduct Natural Language Processing (NLP) analysis on video comments.
    Sub-steps for NLP analysis:
     - Collecting Video Comments:
