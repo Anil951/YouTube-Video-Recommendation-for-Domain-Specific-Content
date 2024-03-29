@@ -2,6 +2,8 @@
 
 Welcome to the YouTube Video Recommendation System project! This comprehensive system is designed to offer personalized and relevant video recommendations within a specific content domain. It leverages the YouTube API, Data analysis, Natural Language Processing (NLP) and LSTM.
 
+*motive in-short* : Providing domain-specific YouTube video suggestions for first-time viewers, incorporating sentiment analysis by Ensemble Modeling, spam filtering, multilingual and transliterated text support on comments, and video ranking based on normalized scores.
+
 ## Project Overview
 
 - **Objective:** To provide accurate and domain-specific video recommendations on YouTube by analysing the video analyics - mainly comments.
