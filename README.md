@@ -88,7 +88,7 @@ Welcome to the YouTube Video Recommendation System project! This comprehensive s
      - `tokenizer.pkl`
 
 ## Contributing
-We welcome contributions from the community to enhance the system's capabilities and accuracy. Feel free to submit pull requests and report issues on GitHub.
+We welcome contributions from the community to enhance the system's capabilities and accuracy. Feel free to submit pull requests and report issues on GitHub...
 
 > [!NOTE]
 > The recommendations and insights provided in this project are based on Natural Language Processing (NLP) analysis and may not be infallible.
