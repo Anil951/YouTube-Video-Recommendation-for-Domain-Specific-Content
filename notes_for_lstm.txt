@@ -1,0 +1,83 @@
+
+1. Preprocessing:
+
+explanation: 
+	We first tokenize the text data to convert it into numerical sequences, then pad the sequences to a fixed length, ensuring that all input data is of equal size for the LSTM model
+
+Tokenization only maps each word to a unique integer.
+
+max_features=2000
+Max features in the tokenizer refers to the maximum number of unique words to keep in the vocabulary, based on word frequency.
+It limits the vocabulary size, ensuring that only the top 2000 most frequent words are considered, which helps reduce noise and computational complexity, making the model more efficient.
+
+max_fatures = 2000
+tokenizer = Tokenizer(num_words=max_fatures, split=' ')
+tokenizer.fit_on_texts(df['text'].values)
+X = tokenizer.texts_to_sequences(df['text'].values)
+X = pad_sequences(X)
+
+
+
+2. LSTM
+
+embed_dim = 128
+lstm_out = 196
+
+model = Sequential()
+model.add(Embedding(max_fatures, embed_dim,input_length = X.shape[1]))
+model.add(SpatialDropout1D(0.4))
+model.add(LSTM(lstm_out, dropout=0.2, recurrent_dropout=0.2))
+model.add(Dense(2,activation='softmax'))
+model.compile(loss = 'categorical_crossentropy', optimizer='adam',metrics = ['accuracy'])
+print(model.summary())
+
+- Embedding Layer:
+Transforms the input integers into dense vectors of fixed size, which capture semantic meaning.
+
+For example, words like "happy" and "joyful" might be mapped to similar vectors, whereas tokenization alone wouldn’t capture this.
+
+The value 128 is commonly used as it balances capturing semantic meaning while maintaining computational efficiency; it provides enough capacity to represent word relationships without excessive complexity. Other values can be chosen based on specific use cases, but 128 is often a good starting point for many natural language processing tasks.
+
+
+- SpatialDropout1D:
+This dropout is applied to the input features (word embeddings) and drops entire feature maps for each time step. This helps prevent overfitting by ensuring that the model doesn't rely too heavily on any particular set of features.
+
+A dropout rate of 40% ensures regularization and reduces the risk of overfitting. This value is empirically effective for tasks like sentiment analysis, where overfitting on training data can be common.
+
+- LSTM Layer:
+The LSTM layer captures patterns in the data that unfold over time. It can understand the context and order of words, which is crucial for sentiment analysis.
+
+dropout in lstm: remembering everything from past make computations complex heavy, so some are to be droped to avoid complexity and overfitting.
+
+- Dense Layer:
+The final dense layer with a sigmoid activation is used for binary classification (positive/negative sentiment).
+
+Since you're classifying between two categories (positive/negative sentiment), the output layer needs 2 units. 
+
+Softmax is used to convert the output into probabilities, ensuring the sum is 1. It is suitable for multi-class classification tasks.
+
+" WE USED SIGMOID AS, FOR US IT IS BINARY CLASSIFICATION - POSITIVE OR NEGATIVE: it also give probs in 0 to 1 (but SOFTMAX is used for MULTI CLASS CLASSIFICATION like postive, neutral,negative that is, give prob of all 3 having sum=1, whose prob is more, that is predicted label)
+
+Adam optimizer : 
+     Adaptive Learning Rate: Adjusts the learning rate for each parameter dynamically, allowing it to converge faster and more efficiently.
+
+
+Explanation:
+
+	"I used an Embedding layer to map words into dense vectors. Then, I applied an LSTM, which helps capture sequential dependencies in the text. A final Dense layer with a sigmoid activation function outputs the sentiment prediction."
+
+
+3. TRAINING AND TESTING
+
+Explanation:
+
+"We split the data into training and testing sets, trained the model using binary cross-entropy as the loss function, and evaluated the accuracy on the test set."
+
+
+4. PREDICT
+
+allows us to predict sentiment for any new text input by preprocessing it and using the trained model to generate probabilities for the sentiment."
+
+Understanding the Output:
+- If the output probability for "positive" is, say, 0.8, it means there is an 80% confidence that the sentiment of the text is positive.
+- Conversely, if the probability is 0.3, it indicates a 30% confidence for being positive, leading to a classification of "negative" since it is below the 0.5 threshold.
